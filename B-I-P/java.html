@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Tutorial for Beginners</title>
+    <link rel="stylesheet" href="java.css">
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Java Tutorial for Beginners</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction to Java</a></li>
+                <li><a href="#variables">Variables and Data Types</a></li>
+                <li><a href="#control-structures">Control Structures</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Java</h2>
+            <p>Java is a high-level, class-based, object-oriented programming language widely used for building enterprise-scale applications.</p>
+            <pre><code class="language-java">public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+        </section>
+        <section id="variables">
+            <h2>Variables and Data Types</h2>
+            <p>In Java, variables store data and must be declared with a specific data type.</p>
+            <pre><code class="language-java">int age = 25;
+String name = "John";
+System.out.println(age);
+System.out.println(name);</code></pre>
+                <p>What is the correct way to declare a variable in Java?</p>
+                <label><input type="radio" name="q1" value="a"> a) var age = 25;</label><br>
+                <label><input type="radio" name="q1" value="b"> b) int age = 25;</label><br>
+                <label><input type="radio" name="q1" value="c"> c) age = 25;</label><br>
+                <button onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                <p id="result-q1"></p>
+            </div>
+        </section>
+        <section id="control-structures">
+            <h2>Control Structures</h2>
+            <p>Control structures like if-else statements let you control program flow based on conditions.</p>
+            <pre><code class="language-java">int number = 10;
+if (number > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative or zero");
+}</code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Java Tutorial</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>function checkAnswer(question, correctAnswer) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.getElementById(`result-${question}`);
+        if (selected) {
+            if (selected.value === correctAnswer) {
+                result.textContent = "Correct!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Incorrect. Try again.";
+                result.style.color = "red";
+            }
+        } else {
+            result.textContent = "Please select an answer.";
+            result.style.color = "orange";
+        }
+    }</script>
+</body>
+</html>

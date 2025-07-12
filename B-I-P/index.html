@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Images properties</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/4e79f148df.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+</html>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa-solid fa-user fa-lg" id="btn" style="color: rgb(255, 255, 255)"></i>
+    </label>
+    <div class="left-nav">
+        <header>MY APPS</header><hr>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fa-solid fa-user fa-lg" id="btn" style="color: #fff;"></i>
+        </label>
+        <ul>
+            <a href="#"><i class='fas fa-qrcode' style='font-size:20px'></i>Dashboard</a><br>
+            <a href="#"><i class='fas fa-link' style='font-size:20px'></i>Shortcuts</a><br>
+            <a href="#"><i class='fas fa-stream' style='font-size:20px'></i>Overview</a><br>
+            <a href="#"><i class='fas fa-calendar-week' style='font-size:20px'></i>Events</a><br>
+            <a href="#"><i class='far fa-question-circle' style='font-size:20px'></i>About</a><br>
+            <a href="#"><i class='fas fa-sliders-h' style='font-size:20px'></i>Services</a><br>
+            <a href="#" class="cont-btn" ><i class='fas fa-toggle-on' style='font-size:20px'></i>Dark mode</a><br>
+        </ul>
+    </div>
+    <header>
+        <form action="https://www.google.com/search" class="search-box"   method="get">
+            <input  class="search-txt" type="text" name="" placeholder="Type to search">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass fa-lg" style="color:  #000000c2 ;"></i>
+            </button>
+        </form>
+        <h2></h2>
+            <nav>
+                <button><a>HOME</a></button>
+                <div class="dropdown">
+                    <h1><button class="dropbtn">COURSE</button></h1>
+                    <div class="dropdown-content">
+                        <a href="html.html" class ="html">Html</a>
+                        <a href="#" class="Css">Css</a>
+                        <a href="#">script</a>
+                        <a href="#">C++</a>
+                        <a href="py.html">python</a>
+                        <a href="java.html">java</a>
+                    </div>
+                </div>
+                <button><a>SERVICES</a></button>
+                <button><a>CONTACT US</a></button>
+            </nav>
+    </header>
+    <div class="main">
+        <div id="content" class="content">
+            <h1><span>Programiz</span></h1>
+        </div>
+        <p>Windows 11 is the latest major release of Microsoft'
+             Windows NT operating system,released in October 5,
+             2021. <br> It is a free upgrade to its predecessor, Wind
+             ows 10 (2015), and is available for any Windows 10
+             devices <br> that meet the new Windows 11 system requirements.</p>
+             <div class="ex pink">
+                <button  class="color pink" id="bandw" onclick="calc()">Explore</button>
+             </div>
+    <script>
+                document.body.classList.add('light');
+                document.getElementById('bandw').addEventListener('click',()=> {
+                document.body.classList.toggle('dark');
+                document.body.classList.toggle('light');
+        })
+        window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+    </script>
+    </div>
+    
+</body>
+<style>
+    body.light{
+    background-image: url("/w11.jpg");
+    }
+    body.dark{
+    background-image: url("/windows-11-bloom-8k-3840x2160-16834.jpg");
+    }
+    .left-nav.light{
+    background-color: rgba(255, 255, 255, 0.562) ;
+    }
+    .left-nav.dark{
+    background-color: rgba(0, 0, 0, 0.562) ;
+    }
+</style>
+</html>

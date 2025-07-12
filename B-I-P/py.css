@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Define CSS variables for theming */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+:root {
+    --background-image: url("/w11.jpg");
+    --text-color: #ffffff;
+    --heading-color: #ffffff;
+    --accent-color: #007bff;
+    --code-background: rgba(244, 244, 244, 0.439);
+    --code-text: #ffffff;
+}
+
+body.dark {
+    --background-image: url("/windows-11-bloom-8k-3840x2160-16834.jpg");
+    --text-color: #ffffff;
+    --heading-color: #ffffff;
+    --accent-color: #66ccff;
+    --code-background: rgba(0, 0, 0, 0.432);
+    --code-text: rgb(255, 255, 255);
+}
+body{
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+}
+/* Base styles */
+
+/* Header with gradient background */
+header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Main content */
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 3em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section i {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+h1, h2, p {
+    color: var(--heading-color);
+}
+
+/* Code block styling */
+.code-block {
+    position: relative;
+}
+
+pre {
+    background-color: var(--code-background);
+    color: var(--code-text);
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: var(--background-color);
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    border-radius: 5px;
+}

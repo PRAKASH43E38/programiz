@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tutorial for Beginners</title>
+    <!-- Google Fonts for typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Prism.js for syntax highlighting (light and dark themes) -->
+    <link id="prism-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link id="prism-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-dark.min.css" disabled>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="py.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Python Tutorial for Beginners</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction" data-section="introduction">Introduction</a></li>
+                <li><a href="#syntax" data-section="syntax">Basic Syntax</a></li>
+                <li><a href="#variables" data-section="variables">Variables</a></li>
+                <li><a href="#examples" data-section="examples">Examples</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </header>
+    <main>
+        <section id="introduction">
+            <i class="fab fa-python"></i>
+            <h2>Introduction to Python</h2>
+            <p>Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
+            <p>It’s widely used in web development, data science, artificial intelligence, and more.</p>
+        </section>
+        <section id="syntax">
+            <i class="fas fa-code"></i>
+            <h2>Basic Syntax</h2>
+            <p>Let’s start with the classic "Hello, World!" program.</p>
+            <div class="code-block">
+                <pre><code class="language-python">print("Hello, World!")</code></pre>
+                <button class="copy-btn">Copy</button>
+            </div>
+            <p>You can run this code in your Python environment to see the output.</p>
+        </section>
+        <section id="variables">
+            <i class="fas fa-tags"></i>
+            <h2>Variables and Data Types</h2>
+            <p>In Python, you can declare variables without specifying their type.</p>
+            <div class="code-block">
+                <pre><code class="language-python">age = 25
+name = "Alice"
+pi = 3.14
+is_student = True</code></pre>
+                <button class="copy-btn">Copy</button>
+            </div>
+            <p>Here, <code>age</code> is an integer, <code>name</code> is a string, <code>pi</code> is a float, and <code>is_student</code> is a boolean.</p>
+        </section>
+        <section id="examples">
+            <i class="fas fa-laptop-code"></i>
+            <h2>Examples</h2>
+            <p>Here’s a simple example combining variables and print statements.</p>
+            <div class="code-block">
+                <pre><code class="language-python">name = "Bob"
+age = 30
+print("Hello, my name is", name, "and I am", age, "years old.")</code></pre>
+                <button class="copy-btn">Copy</button>
+            </div>
+            <p>This outputs: Hello, my name is Bob and I am 30 years old.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Python Tutorial. All rights reserved.</p>
+    </footer>
+    <button id="back-to-top">↑ Top</button>
+    <!-- Prism.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <!-- Custom JavaScript -->
+
+    <script src="script.js"></script>
+    <script>
+        // Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const lightTheme = document.getElementById('prism-light');
+const darkTheme = document.getElementById('prism-dark');
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        lightTheme.disabled = true;
+        darkTheme.disabled = false;
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        lightTheme.disabled = false;
+        darkTheme.disabled = true;
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+});
+
+// Copy code to clipboard
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const code = btn.previousElementSibling.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert('Code copied to clipboard!');
+        });
+    });
+});
+
+// Navigation highlighting and section visibility
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-section') === id);
+            });
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.5 });
+
+sections.forEach(section => observer.observe(section));
+
+// Back to top button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+    </script>
+
+</body>
+</html>
