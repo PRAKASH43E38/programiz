@@ -1,0 +1,34 @@
+This repository contains Python practice programs inspired by the Programiz platform. These exercises help in building a strong foundation in Python programming.
+
+📁 Folder Structure
+
+- Each file focuses on a specific Python concept.
+- File names are based on the topic or logic implemented.
+
+✅ Topics Covered
+
+- Basic I/O operations
+- Conditional statements
+- Loops (for, while)
+- Functions
+- Strings and lists
+- File handling
+- Simple problem solving
+
+🔧 Requirements
+
+- Python 3.x
+
+Run a program using:
+
+```bash
+python filename.py
+```
+
+🙌 Author
+
+Maintained by Prakash
+
+---
+
+Feel free to fork, use, or improve the programs!
